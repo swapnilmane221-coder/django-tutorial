@@ -17,3 +17,17 @@ migrate means create default table
 
 migration 
 -python manage.py migrate
+
+*create superuser
+python manage.py createsuperuser
+
+*to render pages
+from django.shortcuts import render
+def home(request):
+    return render(request, 'home.html')
+
+*how many types routes make
+1.int
+2.str
+3.slug eg.hello-ws-iip
+
