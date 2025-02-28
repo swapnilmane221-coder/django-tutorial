@@ -31,3 +31,11 @@ def home(request):
 2.str
 3.slug eg.hello-ws-iip
 
+*dynamic url
+-path("aboutus/<type:parameter>",views.courseid)
+
+add template path : setting.py->template->dir->BASE_DIR,'templates'
+
+
+
+
