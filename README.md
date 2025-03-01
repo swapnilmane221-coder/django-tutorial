@@ -78,3 +78,8 @@ data={'number':[10,20,30,40,50]}
           {%endif%}
           {%endfor%}
 
+to add static folder
+STATICFILES_DIRS=[BASE_DIR,'static']
+
+to add header or footer
+-{% include "header.html" %}
