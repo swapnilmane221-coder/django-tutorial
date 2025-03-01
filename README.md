@@ -83,3 +83,33 @@ STATICFILES_DIRS=[BASE_DIR,'static']
 
 to add header or footer
 -{% include "header.html" %}
+
+extend & include Django template
+*base.html
+{% include 'header.html' %}
+{% block content %}
+{% endblock %}
+*index.html
+{% extends "base.html" %}
+{% block content %}
+html code 
+{% endblock %}
+
+*url template tag
+href="/about-us"
+or
+path('',views.home,name="home")
+href={% url 'home' %}
+
+url highlighting
+style.css
+.active{
+background-color:blue 
+}
+
+class="{% if request.path =='/about-us'%} actve {% endif %}"
+}
+
+
+
+
