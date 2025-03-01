@@ -36,6 +36,45 @@ def home(request):
 
 add template path : setting.py->template->dir->BASE_DIR,'templates'
 
+*to add djngo file data on html file
+-data={
+          'title':"home Page",
+          'bdata':'welcome to wscubetech',
+          'clist':['PHP','JAVA','DJANGO'],
+          'student':[{'name':"swapnil",'phone':9856856525}, 
+          {'name':'testing','phone':8556526465}]
+     }
+-return render(request,'index.html',data)
+on html:<title>{{title}}<title>
 
+*using django template for loop
+-{%for n in clist%}
+      <div>{{forloop.counter0}} {{n}}<div>
+          <div>{{forloop.first}} {{n}}<div>
+               <div>{{forloop.last}} {{n}}<div>
+          {% endfor %}
+          <table border='1' cellpadding='10'>
+               <tr>
+                    <th>sr. no</th>
+                    <th>Name</th>
+                    <th>Phone number</th>
+               </tr>
+     {%for i in student%}
+     <tr>
+          <th>{{forloop.counter}}</th>
+          <th>{{i.name}}</th>
+          <th>{{i.phone}}</th>
+     </tr>
+     {% endfor %}
+          </table>
 
+*if else statement in django template
+data={'number':[10,20,30,40,50]}
+{%for n in number%}
+          {% if n > 20 %}
+        <div>{{n}}</div> 
+        {% else %}
+        {{'name'|length}} 
+          {%endif%}
+          {%endfor%}
 
