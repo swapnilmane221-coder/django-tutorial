@@ -119,4 +119,10 @@ get data from form to django file (views.js)
 
 get-get data using url
 
+post -to get data using http request
+ n1=int(request.GET['num1'])
+          n2=int(request.GET['num2'])
+          n1=request.POST.get('num1')
+          n2=request.POST.get('num2')
+
 
