@@ -111,5 +111,12 @@ class="{% if request.path =='/about-us'%} actve {% endif %}"
 }
 
 
+get data from form to django file (views.js)
+ n1=int(request.GET['num1'])
+          n2=int(request.GET['num2'])
+          n1=request.GET.get('num1')
+          n2=request.GET.get('num2')
+
+get-get data using url
 
 
