@@ -125,4 +125,27 @@ post -to get data using http request
           n1=request.POST.get('num1')
           n2=request.POST.get('num2')
 
+*create module in python 
+-python manage.py startapp service
+-python manage.py makemigration 
+-python manage.py migrate
+
+create model in models.py
+import model in admin.py
+admin.py
+-from django.contrib import admin
+from service.models import service
+class serviceadmin(admin.ModelAdmin):
+     list_display=['service_icon','service_title','service_description']
+
+admin.site.register(service,serviceadmin)
+# Register your models here.
+
+models.py
+from django.db import models
+class service(models.Model):
+     service_icon = models.CharField(max_length=50)
+     service_title = models.CharField(max_length=50)
+     service_description = models.TextField()
+# Create your models here.
 
