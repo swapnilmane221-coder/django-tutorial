@@ -139,6 +139,7 @@ class serviceadmin(admin.ModelAdmin):
      list_display=['service_icon','service_title','service_description']
 
 admin.site.register(service,serviceadmin)
+
 # Register your models here.
 
 models.py
@@ -148,4 +149,10 @@ class service(models.Model):
      service_title = models.CharField(max_length=50)
      service_description = models.TextField()
 # Create your models here.
+
+get data on html page
+-serviceData=service.objects.all().order_by('-service_description')[1:3]-slicing data(limit)
+-data={'serviceData':serviceData}                                  |  |
+dash before column name is decending                            start end
+
 
