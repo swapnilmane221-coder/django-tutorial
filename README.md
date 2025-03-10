@@ -155,4 +155,6 @@ get data on html page
 -data={'serviceData':serviceData}                                  |  |
 dash before column name is decending                            start end
 
+to filter data
+newsdetail=news.objects.filter(news_title=st)
 
