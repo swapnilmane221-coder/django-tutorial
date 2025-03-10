@@ -160,3 +160,19 @@ newsdetail=news.objects.filter(news_title=st)
 
 # to change admin password
 python manage.py changepassword username
+
+#pagination
+serviceData=service.objects.all()
+          Paginator=Paginator(serviceData,2)
+          page_number=request.GET.get('page')
+          servicefinalData=Paginator.get_page(page_number)
+          total_pages=servicefinalData.paginator.num_pages
+
+          data={'serviceData':servicefinalData,
+                'totalpagelist':[n+1 for n in range(total_pages)]}
+          return render(request,'services.html',data)
+{% if serviceData.has_previous and serviceData.has_next % }
+print("hi")
+{% endif %}
+
+#form data to database
