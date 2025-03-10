@@ -1,42 +1,41 @@
 # django-tutorial 
 
-*to create project
+##to create project
 -django-admin startproject project_name
 
-*to run server 
+##to run server 
 -python manage.py runserver
 
-*to change port or declare port
+##to change port or declare port
 -python manage.py runserver 4001
 
-*templates folder includes html file
-*static folder include all css ,js file
-*media file store dynamic file such as image
+##templates folder includes html file
+##static folder include all css ,js file
+##media file store dynamic file such as image
 
+##migration 
 migrate means create default table 
-
-migration 
 -python manage.py migrate
 
-*create superuser
+##create superuser
 python manage.py createsuperuser
 
-*to render pages
+##to render pages
 from django.shortcuts import render
 def home(request):
     return render(request, 'home.html')
 
-*how many types routes make
+##how many types routes make
 1.int
 2.str
 3.slug eg.hello-ws-iip
 
-*dynamic url
+##dynamic url
 -path("aboutus/<type:parameter>",views.courseid)
 
 add template path : setting.py->template->dir->BASE_DIR,'templates'
 
-*to add djngo file data on html file
+##to add djngo file data on html file
 -data={
           'title':"home Page",
           'bdata':'welcome to wscubetech',
@@ -47,7 +46,7 @@ add template path : setting.py->template->dir->BASE_DIR,'templates'
 -return render(request,'index.html',data)
 on html:<title>{{title}}<title>
 
-*using django template for loop
+##using django template for loop
 -{%for n in clist%}
       <div>{{forloop.counter0}} {{n}}<div>
           <div>{{forloop.first}} {{n}}<div>
@@ -68,7 +67,7 @@ on html:<title>{{title}}<title>
      {% endfor %}
           </table>
 
-*if else statement in django template
+##if else statement in django template
 data={'number':[10,20,30,40,50]}
 {%for n in number%}
           {% if n > 20 %}
@@ -78,14 +77,14 @@ data={'number':[10,20,30,40,50]}
           {%endif%}
           {%endfor%}
 
-to add static folder
+##to add static folder
 STATICFILES_DIRS=[BASE_DIR,'static']
 
-to add header or footer
+##to add header or footer
 -{% include "header.html" %}
 
 extend & include Django template
-*base.html
+##base.html
 {% include 'header.html' %}
 {% block content %}
 {% endblock %}
@@ -95,7 +94,7 @@ extend & include Django template
 html code 
 {% endblock %}
 
-*url template tag
+## url template tag
 href="/about-us"
 or
 path('',views.home,name="home")
@@ -111,8 +110,8 @@ class="{% if request.path =='/about-us'%} actve {% endif %}"
 }
 
 
-get data from form to django file (views.js)
- n1=int(request.GET['num1'])
+## get data from form to django file (views.js)
+  n1=int(request.GET['num1'])
           n2=int(request.GET['num2'])
           n1=request.GET.get('num1')
           n2=request.GET.get('num2')
@@ -125,7 +124,7 @@ post -to get data using http request
           n1=request.POST.get('num1')
           n2=request.POST.get('num2')
 
-*create module in python 
+## create module in python 
 -python manage.py startapp service
 -python manage.py makemigration 
 -python manage.py migrate
@@ -155,13 +154,13 @@ get data on html page
 -data={'serviceData':serviceData}                                  |  |
 dash before column name is decending                            start end
 
-to filter data
+## to filter data
 newsdetail=news.objects.filter(news_title=st)
 
-# to change admin password
+## to change admin password
 python manage.py changepassword username
 
-#pagination
+## pagination
 serviceData=service.objects.all()
           Paginator=Paginator(serviceData,2)
           page_number=request.GET.get('page')
@@ -175,7 +174,7 @@ serviceData=service.objects.all()
 print("hi")
 {% endif %}
 
-#form data to database
+## form data to database
  n=''
      if request.method=='POST':
           name=request.POST.get('name')
