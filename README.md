@@ -176,3 +176,13 @@ print("hi")
 {% endif %}
 
 #form data to database
+ n=''
+     if request.method=='POST':
+          name=request.POST.get('name')
+          email=request.POST.get('email')
+          username=request.POST.get('Username')
+          password=request.POST.get('password')
+          en=query(name=name,email=email,username=username,password=password)
+          en.save()
+          n='data saved successfully'
+          
