@@ -1,41 +1,41 @@
 # django-tutorial 
 
-##to create project
+## to create project
 -django-admin startproject project_name
 
-##to run server 
+## to run server 
 -python manage.py runserver
 
-##to change port or declare port
+## to change port or declare port
 -python manage.py runserver 4001
 
-##templates folder includes html file
-##static folder include all css ,js file
-##media file store dynamic file such as image
+## templates folder includes html file
+## static folder include all css ,js file
+## media file store dynamic file such as image
 
-##migration 
+## migration 
 migrate means create default table 
 -python manage.py migrate
 
-##create superuser
+## create superuser
 python manage.py createsuperuser
 
-##to render pages
+## to render pages
 from django.shortcuts import render
 def home(request):
     return render(request, 'home.html')
 
-##how many types routes make
+## how many types routes make
 1.int
 2.str
 3.slug eg.hello-ws-iip
 
-##dynamic url
+## dynamic url
 -path("aboutus/<type:parameter>",views.courseid)
 
 add template path : setting.py->template->dir->BASE_DIR,'templates'
 
-##to add djngo file data on html file
+## to add djngo file data on html file
 -data={
           'title':"home Page",
           'bdata':'welcome to wscubetech',
@@ -46,7 +46,7 @@ add template path : setting.py->template->dir->BASE_DIR,'templates'
 -return render(request,'index.html',data)
 on html:<title>{{title}}<title>
 
-##using django template for loop
+## using django template for loop
 -{%for n in clist%}
       <div>{{forloop.counter0}} {{n}}<div>
           <div>{{forloop.first}} {{n}}<div>
@@ -67,7 +67,7 @@ on html:<title>{{title}}<title>
      {% endfor %}
           </table>
 
-##if else statement in django template
+## if else statement in django template
 data={'number':[10,20,30,40,50]}
 {%for n in number%}
           {% if n > 20 %}
@@ -77,14 +77,14 @@ data={'number':[10,20,30,40,50]}
           {%endif%}
           {%endfor%}
 
-##to add static folder
+## to add static folder
 STATICFILES_DIRS=[BASE_DIR,'static']
 
-##to add header or footer
+## to add header or footer
 -{% include "header.html" %}
 
 extend & include Django template
-##base.html
+## base.html
 {% include 'header.html' %}
 {% block content %}
 {% endblock %}
