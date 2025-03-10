@@ -184,4 +184,13 @@ print("hi")
           en=query(name=name,email=email,username=username,password=password)
           en.save()
           n='data saved successfully'
+
+## to add media root
+MEDIA_ROOT=BASE_DIR/'media'
+MEDIA_URL='/media/'
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+
           
