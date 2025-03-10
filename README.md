@@ -158,3 +158,5 @@ dash before column name is decending                            start end
 to filter data
 newsdetail=news.objects.filter(news_title=st)
 
+# to change admin password
+python manage.py changepassword username
