@@ -189,8 +189,17 @@ print("hi")
 MEDIA_ROOT=BASE_DIR/'media'
 MEDIA_URL='/media/'
 
+## How to upload file with File Field
+views.py
 from django.conf import settings
 from django.conf.urls.static import static
+
+if settings.DEBUG:
+     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+news.models.py
+news_image=models.ImageField(upload_to='news/',max_length=250,null=True,default=None)
+
 
 
           
