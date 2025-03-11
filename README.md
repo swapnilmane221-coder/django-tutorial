@@ -200,6 +200,35 @@ if settings.DEBUG:
 news.models.py
 news_image=models.ImageField(upload_to='news/',max_length=250,null=True,default=None)
 
+## how to display uploaded image
+     <img src="/media/{{i.news_image}}" width=800px>
+## How to send Email in Django
+#### Settings.py
+EMAIL_USE_TLS=True
+EMail_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='swapnil.mane23@it.sce.edu.in'
+EMAIL_HOST_PASSWORD=''
+#### views.py
+from django.core.mail import send_mail
+send_mail(
+          'subject name',
+          'message is here',
+          'swapnil.mane23@it.sce.edu.in',
+          ['swapnilmane2518@gmail.com'],
+          fail_silently=False
+     )
+
+## Email multialternatives
+from django.core.mail import send_mail,EmailMessage
+subject='welcome to wscubetech'
+     from_email='swapnil.mane23@it.sce.edu.in'
+     msg='hi,this is <b> swapnil </b>'
+     to_email='swapnilmane2518@gmail.com'
+     msg=EmailMultiAlternatives(subject,msg,from_email,[to_email])
+     msg.content_subtype='html'
+     msg.send()
+
 
 
           
