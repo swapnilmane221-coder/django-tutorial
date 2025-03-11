@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% comment %} {% include "header.html" %} {% endcomment %}
+{% block content %}
+ <marquee onmouseover="stop()" onmouseout="start()">
+     
+     {% for i in newsdata  %}
+    <a href="/newsdetail/{{news.newsdetail}}"> {{i.news_title}} </a>&nbsp;&nbsp;
+
+     {% endfor %}
+          
+</marquee> 
+<form method='GET'>
+     <input type='text' name='servicename' value=""/>
+                    <input type='submit' value='search'>
+</form>
+{% for n in serviceData %}
+<div>{{n.service_icon}}  {{n.service_title}}  {{n.service_description | safe}}</div>
+{% empty %}
+No data found
+ {% endfor %}
+
+          <div class="sign-up-form">
+               <div class="head">
+                    <h1>Sign up</h1>
+                    <h6>Join EcoLife for a greener future</h6>
+               </div>
+               <form action="" method="POST">
+                    
+                     <p>Enter your full name</p>
+                    <input type="text" name="name" id="name" placeholder="Name Surname" required>
+                    <p>Email</p>
+                    <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                    <p>Username</p>
+                    <input type="text" name="Username" id="Username" placeholder="Choose a username" required>
+                    <p>Set up your secure password</p>
+                    <input type="password" name="password" id="password" placeholder="Minimum 8 characters required" required autocomplete="new-password">
+                    <p>Confirm your password</p>
+                    <input type="password" name="password" id="cpassword" placeholder="Confirm password" required autocomplete="new-password">
+                    <br>
+                    <input type="checkbox" name="checkbox" id="checkbox" required>
+                    <label for="checkbox">By signing up, you agree to our Terms and Privacy Policy</label>
+                    <br> 
+                    <button type="button" class="sign-up" href="/about-us">Get Started</button>
+                    <p>Already a member? <a href="/about-us">Log in</a></p> 
+               </form>
+               
+                                 
+          </div>
+     </div>
+     <script src="/js/common.js"></script>
+</body>
+</html>
+{% endblock %}

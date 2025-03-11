@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+     <title>calculator</title>
+</head>
+<body>
+     <h1>Calculator</h1>
+     <form method='POST'>
+          {% csrf_token %}
+          <label>subject 1</label>
+          <input type="text" name='sub1' class="form-control">
+          <br>
+          <label>subject 2</label>
+          <input type="text" name='sub2' class="form-control">
+          <br>
+          <label>subject 3</label>
+          <input type="text" name='sub3' class="form-control">
+          <br>
+          <label>subject 4</label>
+          <input type="text" name='sub4' class="form-control">
+          <br>
+          <label>subject 5</label>
+          <input type="text" name='sub5' class="form-control">
+          <br>
+          <button type="submit">calculate</button>
+          <br>
+          <label>Total marks:</label>
+          <input type='text' name='output' value={{total}}>
+          <label>Percentage :</label>
+          <input type='text' name='output' value={{avg}}>
+          <label>Division :</label>
+          <input type='textarea' name='output' value={{division}}>
+
+          
+
+
+     </form>

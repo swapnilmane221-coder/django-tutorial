@@ -1,0 +1,23 @@
+ {% extends "base.html" %}
+{% block content %}
+
+  <div class='container'>
+     <div class='title'>
+          <h1 class='mb-10'>User Form</h1>
+           <div class='row'>
+               <form method='POST'>
+                    {% csrf_token %}
+                    {{form}}
+                    {% comment %} <label for="">value1</label>
+                    <input type='text' name='num1'>
+                    <label for="">value2</label>
+                    <input type='text' name='num2'> {% endcomment %}
+                    <button type='submit'>save</button>
+                    <input type='text' value='{{output}}'>
+
+
+               </form>
+           </div>
+     </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,40 @@
+<<!DOCTYPE html>
+<html class="no-js"> <!--<![endif]-->
+<html>
+     <head>
+         <title>{{title}}</title>
+     </head>
+     <body>
+          <h1>{{bdata}}<h1>
+
+     {%for n in clist%}
+      <div>{{forloop.counter0}} {{n}}<div>
+          {% comment %} <div>{{forloop.first}} {{n}}<div> {% endcomment %}
+               {% comment %} <div>{{forloop.last}} {{n}}<div> {% endcomment %}
+
+
+          {% endfor %}
+          <table border='1' cellpadding='10'>
+               <tr>
+                    <th>sr. no</th>
+                    <th>Name</th>
+                    <th>Phone number</th>
+               </tr>
+     {%for i in student%}
+     <tr>
+          <th>{{forloop.counter}}</th>
+          <th>{{i.name}}</th>
+          <th>{{i.phone}}</th>
+     </tr>
+     {% endfor %}
+          </table>
+
+          {%for n in number%}
+          {% if n > 20 %}
+        <div>{{n}}</div> 
+        {% else %} 
+        {{'name'|length}} 
+          {%endif%}
+          {%endfor%}
+     </body>
+</html>
