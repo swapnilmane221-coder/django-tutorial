@@ -100,7 +100,7 @@ or
 path('',views.home,name="home")
 href={% url 'home' %}
 
-url highlighting
+## url highlighting
 style.css
 .active{
 background-color:blue 
